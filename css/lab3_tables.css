@@ -1,0 +1,29 @@
+.content table {
+    width: 100vw;
+    height: calc(100vh - 48px);
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+.content table td {
+    border: 3px solid black;
+}
+
+.content table .yellow-column {
+    background-color: #ffff00;
+}
+
+.content table .blue-row {
+    width: 40%;
+    background-color: #0000ff;
+}
+
+.content table .white-row {
+    background-color: #ffffff;
+    border: none;
+}
+
+.content table .white-column {
+    background-color: #ffffff;
+    width: 20%;
+}
