@@ -1,0 +1,294 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+*{/*універсальний селектор*/
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    height: 100%;
+    background-image: url(https://images.unsplash.com/photo-1470298455676-c71fac677476?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.stonks {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.table {
+    width: 95%;
+    height: 600px;
+    background-color: rgba(247, 239, 255, 0.8);
+    margin-left: 40px;
+    alignment: center;
+
+}
+
+ul>li {/*дочірній селектор*/
+    margin: 10px;
+    font: 20px bold;
+}
+
+#tt {
+    text-align: center;
+    font: 25px "Bookman Old Style", bold;
+}
+
+.owners {
+    text-align: center;
+    margin: auto;
+    background-color: #fefefe;
+}
+td { /*селектор тегу*/
+    border: 1px outset black;
+}
+
+.list-menu { /*селектор класу*/
+    float: left;
+}
+
+.adress {
+    float: left;
+    margin-left: 700px;
+    margin-top: 20px;
+    height: 300px;
+    width: 300px;
+}
+
+.header {
+    height: 48px;
+    display: flex;
+    background-color: #ffffff;
+    box-shadow: 0 10px 16px -6px rgba(0,0,0,.08)
+}
+.adress, .owners {/*групування селекторів*/
+    border: 2px solid #191949;
+}
+
+.header .main-area {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    flex-grow: 0;
+    padding: 0;
+    width: 824px;
+}
+
+.title {
+    margin: 0 32px 0 0;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+
+.header .main-area .items a.item {
+    position: relative;
+    padding: 15px; /*внутрішній відступ*/
+    margin: 0 5px; /*зовнішній відступ*/
+    color: #79818c;
+    text-decoration: none;
+    letter-spacing: 0;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.header .main-area .items a.item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0;
+    content: '';
+    color: transparent;
+    background: #cbcfd3;
+    height: 2px;
+}
+
+.header .main-area .items a.item:hover {
+    color: #333;
+}
+
+.header .main-area .items a.item:visited {
+    text-decoration: none;
+}
+
+.header .main-area .items a.item:hover::after {
+    width: 100%;
+}
+
+.header .signin-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: auto auto auto 0;
+}
+
+.header .signin-btn .btn {
+    background-color: #f5f5f6;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    height: 30px;
+    cursor: pointer;
+    box-shadow: 0 10px 16px -6px rgba(0, 0, 0, .1);
+}
+
+.header .signin-btn .btn:hover {
+    color: #0000ff;
+}
+
+.main-container {
+    display: flex;
+}
+
+.main-container .signin {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 16px -6px rgba(0, 0, 0, .1);
+    margin: 40px auto;
+    padding: 25px;
+    background: #f5f5f6;
+    height: 20%;
+}
+
+.main-container .signin .signin-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-container .signin h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.main-container .signin .signin-form .input-field {
+    max-width: 380px;
+    width: 100%;
+    height: 35px;
+    background-color: #dcdcdd;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.main-container .signin .signin-form input {
+    background: none;
+    outline: none;
+    border: none;
+    display: block;
+    font-weight: 500;
+    line-height: 1;
+    font-size: 1.1rem;
+    padding-left: 10px;
+}
+
+.main-container .signin .signin-form .sumbit-btn {
+    margin-top: 10px;
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #ffdd2d;
+}
+
+.main-container .signin .signin-form .sumbit-btn:hover {
+    background-color: #fcc61b;
+    box-shadow: 0 10px 16px -6px rgba(0, 0, 0, .1);
+
+}
+
+.main-container .bank-info {
+    margin: 45px auto;
+    width: 40%;
+}
+
+.main-container .bank-info p {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: white;
+    font-weight: 400;
+    box-shadow: 0 10px 16px -6px rgba(0, 0, 0, .1);
+
+}
+
+
+
+/* body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+}
+
+.header nav {
+    width: 100%;
+    margin: 0 0;
+    background: #fff;
+    padding: 0 0;
+}
+
+.header nav ul {
+    list-style: none;
+    text-align: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+}
+
+.header nav ul li {
+    display: inline-block;
+}
+
+.header nav ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 5px;
+}
+
+.header nav ul li a:hover {
+    color: #555;
+}
+
+.header nav.stroke ul li a {
+    position: relative;
+}
+
+.header nav.stroke ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '';
+    color: transparent;
+    background: #333;
+    height: 1px;
+}
+
+.header nav.stroke ul li a:hover:after {
+    width: 100%;
+} */
