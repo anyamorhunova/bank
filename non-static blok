@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+ <head>
+ <style>
+.blok2 {
+padding:16px;
+width:160px;
+height:500px;
+border:1px solid red;
+background:#FFFF00;
+float:left;
+}
+.blok1 {
+padding:32px;
+width:320px;
+height:50px;
+border:1px solid red;
+background:#000066;
+float:right;
+}
+.blok4 {
+padding:32px;
+width:320px;
+height:200px;
+border:1px solid red;
+background:#FFFFFF;
+margin-top: 50px;
+float:right;
+}
+   
+   .blok3 {
+padding:32px;
+width:320px;
+height:50px;
+border:1px solid red;
+background:#000066;
+margin-top: 250px;
+float:right;
+}
+ </style>
+ </head>
+ <body>
+<div class="blok2">я второй слева плавающий блок</div>
+<div class="blok1">я плавающий справа блок</div>
+<div class="blok4">я плавающий справа блок</div>
+<div class="blok3">я плавающий справа блок</div>
+ </body>
+</html>
