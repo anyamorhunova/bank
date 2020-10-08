@@ -1,37 +1,46 @@
 <!DOCTYPE HTML PUBLIC>
 <html>
  <head>
- <title>Блок в css</title>
  <style>
- .blok1 {
-padding:8px;
-width:80px;
-height:80px;
-border:1px solid red;
-background:#66FFFF;
-float:left;
-}
 .blok2 {
 padding:16px;
 width:160px;
-height:160px;
+height:500px;
 border:1px solid red;
-background:#99FFCC;
+background:#FFFF00;
 float:left;
 }
-.blok3 {
+.blok1 {
 padding:32px;
 width:320px;
-height:320px;
+height:50px;
 border:1px solid red;
-background:#FFCCFF;
+background:#000066;
+float:right;
+}
+.blok4 {
+padding:32px;
+width:320px;
+height:200px;
+border:1px solid red;
+background:#FFFFFF;
+float:right;
+}
+   
+   .blok3 {
+padding:32px;
+width:320px;
+height:50px;
+border:1px solid red;
+background:#000066;
 float:right;
 }
  </style>
  </head>
  <body>
-<div class="blok1">я плавающий слева блок</div>
 <div class="blok2">я второй слева плавающий блок</div>
+<div class="blok1">я плавающий справа блок</div>
+<div class="blok4">я плавающий справа блок</div>
 <div class="blok3">я плавающий справа блок</div>
  </body>
 </html>
