@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC>
+<html>
+
+<head>
+    <style>
+        .content table {
+            width: 100vw;
+            height: calc(100vh - 48px);
+            border-collapse: collapse;
+            border-spacing: 0px;
+        }
+
+        .content table td {
+            border: 3px solid black;
+            text-align: center;
+            font-weight: 700;
+            font-size: large;
+        }
+
+        .content table .yellow-column {
+            margin-top: 500px;
+            background-color: #ffff00;
+        }
+
+        .content table .blue-row {
+            width: 0%;
+            background-color: #0000ff;
+        }
+
+        .content table .white-row {
+            background-color: #ffffff;
+            border: none;
+        }
+
+        .content table .white-column {
+            background-color: #ffffff;
+            width: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <table>
+            <tr>
+                <td colspan="4" class="blue-row">1</td>
+            </tr>
+            <tr>
+                <td rowspan="6" class="yellow-column">5</td>
+                <td rowspan="6" class="white-column">4</td>
+                <td rowspan="6" class="yellow-column">2</td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td colspan="4" class="blue-row">3</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

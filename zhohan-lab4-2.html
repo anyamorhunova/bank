@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4. Zhohan</title>
+    <style>
+        .container {
+            margin: 20% 20%;
+        }
+
+        .hint {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .hint .text {
+            visibility: hidden;
+            width: 100px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -50px;
+        }
+
+        .hint .show {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="hint" onmouseover="showHint('hint-1')"
+                onmouseout="showHint('hint-1')">Duis rutrum <span class="text" id="hint-1">hint #1</span></span>
+            ultrices tortor nec interdum.
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent
+            faucibus congue nisl, <span class="hint" onmouseover="showHint('hint-2')"
+                onmouseout="showHint('hint-2')">sit amet feugiat elit <span class="text" id="hint-2">hint
+                    #2</span></span> fringilla eget. In hac habitasse platea dictumst. Pellentesque
+            efficitur dapibus libero, eu iaculis massa vulputate ut. In laoreet vulputate tempor. Vivamus eleifend,
+            risus in lobortis eleifend, mauris nibh placerat nibh, et placerat <span class="hint"
+                onmouseover="showHint('hint-3')" onmouseout="showHint('hint-3')">libero turpis ac est <span class="text"
+                    id="hint-3">hint #3</span></span>. Aliquam at sodales
+            dui. Nam suscipit lectus ipsum, vitae vestibulum eros sollicitudin et. In ornare metus eu hendrerit
+            hendrerit. Integer molestie, nisl nec tincidunt fringilla, eros odio dictum arcu.</p>
+    </div>
+
+    <script>
+        function showHint(hintId) {
+            var hint = document.getElementById(hintId);
+            hint.classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>

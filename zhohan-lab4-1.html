@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4. Zhohan</title>
+    <style>
+        .container {
+            margin-top: 20%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="number" placeholder="Array's size" id="array-size">
+        <button id="create" type="button" onclick="start()">Create array</button>
+        <p id="created-array"></p>
+        <p id="array-after-mod"></p>
+        <p id="sorted-array"></p>
+    </div>
+
+    <script>
+        function start() {
+            if (document.getElementById("array-size").value > 0 && document.getElementById("array-size").value < 50) {
+                var randomArray = [];
+                const ARRAY_LENGTH = document.getElementById("array-size").value;
+                for (let i = 0; i < ARRAY_LENGTH; i++) {
+                    randomArray.push(Math.floor(Math.random() * (100 - 1)) + 1);
+                }
+
+                document.getElementById("created-array").innerHTML = "Created array: " + randomArray.toString();
+
+                var min = Math.min(...randomArray);
+                randomArray.splice(randomArray.indexOf(min), 1);
+                randomArray.unshift(min);
+
+                document.getElementById("array-after-mod").innerHTML = "Push min number of array: " + randomArray.toString();
+
+                document.getElementById("sorted-array").innerHTML = "Sorted array (from max to min): " + selectionSort(randomArray).toString();
+            } else {
+                document.getElementById("created-array").innerHTML = "Array's size must be between 1 and 50";
+            }
+        }
+
+        function selectionSort(array) {
+            let len = array.length;
+
+            for (let i = 0; i < len; i++) {
+                let max = i;
+                for (let j = i + 1; j < len; j++) {
+                    if (array[j] > array[max]) {
+                        max = j;
+                    }
+                }
+                if (max != i) {
+                    let temp = array[i];
+                    array[i] = array[max];
+                    array[max] = temp;
+                }
+            }
+
+
+            return array;
+        }
+    </script>
+</body>
+
+</html>

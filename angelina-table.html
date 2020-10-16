@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>Lab3</title>
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+        .content table {
+            width: 100vw;
+            height: calc(100vh - 48px);
+            border-collapse: collapse;
+            border-spacing: 0px;
+        }
+
+        .content table td {
+            border: 3px solid black;
+            text-align: center;
+            font-weight: 700;
+            font-size: large;
+        }
+
+        .content table .orange-column {
+            background-color: orange;
+        }
+
+        .content table .purple-row {
+            width: 40%;
+            background-color: purple;
+        }
+
+        .content table .white-row {
+            background-color: #ffffff;
+            border: none;
+        }
+
+        .content table .white-column {
+            background-color: #ffffff;
+            width: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="main-area">
+            <img class="stonks"
+                src="https://camo.githubusercontent.com/a485ff6a8c645f17c6f7b85035c550f3223215b6/68747470733a2f2f692e696d6775722e636f6d2f495454356877702e706e67">
+            <div class="logo">
+                <a href="login.html" class="title">MORZHOLYA</a>
+            </div>
+            <div class="items">
+                <a href="" class="item">Credit Cards</a>
+                <a href="" class="item">Debit Cards</a>
+                <a href="" class="item">Savings</a>
+                <a href="lab2.html" class="item">Loans</a>
+                <a href="about.html" class="item">About Us</a>
+            </div>
+        </div>
+        <div class="signin-btn">
+            <input class="btn" type="button" value="Log in">
+        </div>
+    </div>
+    <div class="content">
+        <table>
+            <tr>
+                <td rowspan="6" class="orange-column">2</td>
+                <td rowspan="6" class="white-column"></td>
+                <td colspan="3" class="purple-row">1</td>
+                <td rowspan="6" class="white-column"></td>
+            </tr>
+            <tr>
+                <td class="white-row" colspan="3" rowspan="4">4</td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td colspan="3" class="purple-row">3</td>
+            </tr>
+        </table>
+    </div>
+    </div>
+</body>
+
+</html>
