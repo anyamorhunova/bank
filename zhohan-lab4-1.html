@@ -10,11 +10,11 @@
             margin-top: 20%;
             text-align: center;
         }
-    </style>
+    </style> <!-- Стилізація -->
 </head>
 
 <body>
-    <div class="container">
+    <div class="container"><!-- Створення блоку з вхідними та вихідними данними -->
         <input type="number" placeholder="Array's size" id="array-size">
         <button id="create" type="button" onclick="start()">Create array</button>
         <p id="created-array"></p>
@@ -24,22 +24,22 @@
 
     <script>
         function start() {
-            if (document.getElementById("array-size").value > 0 && document.getElementById("array-size").value < 50) {
+            if (document.getElementById("array-size").value > 0 && document.getElementById("array-size").value < 50) {<!-- Перевірка на кількість елементів у масиві - їх має бути не більше 50 -->
                 var randomArray = [];
                 const ARRAY_LENGTH = document.getElementById("array-size").value;
                 for (let i = 0; i < ARRAY_LENGTH; i++) {
-                    randomArray.push(Math.floor(Math.random() * (100 - 1)) + 1);
+                    randomArray.push(Math.floor(Math.random() * (100 - 1)) + 1); <!-- Заповнення масиву рандомними числами -->
                 }
 
-                document.getElementById("created-array").innerHTML = "Created array: " + randomArray.toString();
+                document.getElementById("created-array").innerHTML = "Created array: " + randomArray.toString();<!-- Передача створеного масиву до HTML-документу -->
 
-                var min = Math.min(...randomArray);
+                var min = Math.min(...randomArray); <!--Мінімальний елемент за значанням у масиві -->
                 randomArray.splice(randomArray.indexOf(min), 1);
                 randomArray.unshift(min);
 
-                document.getElementById("array-after-mod").innerHTML = "Push min number of array: " + randomArray.toString();
+                document.getElementById("array-after-mod").innerHTML = "Push min number of array: " + randomArray.toString();<!--Передача нового масиву у документ -->
 
-                document.getElementById("sorted-array").innerHTML = "Sorted array (from max to min): " + selectionSort(randomArray).toString();
+                document.getElementById("sorted-array").innerHTML = "Sorted array (from max to min): " + selectionSort(randomArray).toString();<!--Передача у документ масиву, який відсортовано методом вибору -->
             } else {
                 document.getElementById("created-array").innerHTML = "Array's size must be between 1 and 50";
             }
@@ -69,3 +69,4 @@
 </body>
 
 </html>
+

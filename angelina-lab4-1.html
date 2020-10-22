@@ -7,37 +7,39 @@
     <title>Lab 4. Liaskovych</title>
     <style>
         .container {
-            margin-top: 20%;
-            text-align: center;
+            margin-top: 20%; //отсуп от верхушки страницы
+        text-align: center; //выравнивание текста по центру
         }
-    </style>
+    </style><!--Создаем стиль в котором будем оформлять ЛР-->
 </head>
 
 <body>
-<div class="container">
-    <button onclick="start()">Show completed tasks</button>
-    <p id="demo"></p>
-    <p id="mod"></p>
-    <p id="sort"></p>
+<div class="container"> <!--используем созданный стиль-->
+    <button onclick="start()">Show completed tasks</button> <!--создали кнопку которая будет запускать выполнение программы (когда мы клацаем на кнопку, начинает выполнятся функция "старт")-->
+    <p id="demo"></p> <!--состояние1 при котором выводится на экран массив-->
+    <p id="mod"></p> <!--состояние2 при котором выводится на экран массив отсортированный по кратности (кратен 2, кратен 2 и 3, кратен 3)-->
+    <p id="sort"></p> <!--состояние3 при котором выводится на экран отсортированный массив-->
 </div>
 
 <script>
-    var array = [2, 9, 12, 8, 6];
+    var array = [2, 9, 12, 8, 6]; //создали заполненный массив
     function start() {
-        document.getElementById("demo").innerHTML = "Array list: " +  array.toString();
-
-        document.getElementById("mod").innerHTML = "Array list with mod: " +  mod(array).toString();
-
-        document.getElementById("sort").innerHTML ="Sorted Array list: " + quickSort(array).toString();
+        document.getElementById("demo").innerHTML = "Array list: " +  array.toString(); //для состояния1 выводим на экран надпись "Array list: " а также массив array
+//document - указываем для какого из 6 ключевых объектов выполняем следующие действия
+//getElementById возвращает ссылку на элемент по его Id, innerHTML устанавливает или возвращает значение какого-либо элемента HTML
+        document.getElementById("mod").innerHTML = "Array list with mod: " +  mod(array).toString(); //для состояния2 выводим на экран надпись "Array list with mod: " а также значение что возвращает функция mod()
+//toString() - выводит как строку элементы заданного массива
+        document.getElementById("sort").innerHTML ="Sorted Array list: " + quickSort(array).toString(); //для состояния3 выводим на экран надпись "Array list with mod: " а также значение что возвращает функция quickSort()
+//
     }
 
 
-    function quickSort(arr) {
-        if (arr.length < 2) return arr;
-        let pivot = arr[0];
-        const left = [];
-        const right = [];
-
+    function quickSort(arr) { //функция сортировки
+        if (arr.length < 2) return arr; //если массив пустой или состоит из одного элемента, то просто вернуть неизмененный массив
+        let pivot = arr[0]; //создаем переменную и присваиваем ей значение нулевого элемента массива
+        const left = []; //создаем временную переменную
+        const right = []; //создаем временную переменную
+        //делим начальный массив на два, где в левом элементы больше pivot и в правом меньше либо равно pivot
         for (let i = 1; i < arr.length; i++) {
             if (pivot > arr[i]) {
                 left.push(arr[i]);
@@ -45,26 +47,29 @@
                 right.push(arr[i]);
             }
         }
+//рекурсивный вызов функции quickSort(), но уже не для arr а для левого и правого массива до тез пор пока не получим отсортированный массив
         return quickSort(left).concat(pivot, quickSort(right));
+//concat - обьединяет массивы (в нашем случае: левый + pivot + правый) и возвращает новый - объединенный массив(также может использоваться для добавления аргумента(ов) в массив)
+//в даном случае объединено рекурсивный вызов и возвращение результата работы функции
     }
-    function mod(arr){
-        var array = [];
-        for (let i = 0; i < arr.length; i++){
+
+    function mod(arr){ //функция сортировки по кратности
+        var array = []; //создали пустой массив
+        for (let i = 0; i < arr.length; i++){ //отделяем элементы кратные 2 и 3
             if (arr[i] % 2 == 0 && arr[i] % 3 != 0)
-                array.push(arr[i]);
+                array.push(arr[i]); //добавляем в массив
         }
-        var arrth = [];
+        var arrth = []; //создали пустой массив
         for (let i = 0; i < array.length; i++){
-            if (arr[i] % 3 == 0 && arr[i] % 2 != 0)
-                arrth.push(arr[i]);
+            if (arr[i] % 3 == 0 && arr[i] % 2 != 0) //отделяем элементы кратные только 3
+                arrth.push(arr[i]); //добавили элемент в массив
         }
-        var ar = [];
+        var ar = []; //создали пустой массив
         for (let i = 0; i < arr.length; i++){
-            if (arr[i] % 2 == 0 && arr[i] % 3 == 0)
+            if (arr[i] % 2 == 0 && arr[i] % 3 == 0) //отделяем элементы кратные только 2
                 ar.push(arr[i]);
         }
-        return array.concat(ar, arrth);
-
+        return array.concat(ar, arrth); //соединяем все три массивав один массив array (array + arr + arrth) = array
     }
 </script>
 </body>

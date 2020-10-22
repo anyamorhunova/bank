@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 4. Zhohan</title>
+    <!-- Стилізація -->
     <style>
         .container {
             margin: 20% 20%;
@@ -31,15 +32,13 @@
             left: 50%;
             margin-left: -50px;
         }
-
         .hint .show {
             visibility: visible;
         }
     </style>
 </head>
-
 <body>
-    <div class="container">
+    <div class="container"><!-- Використання обробника подій -->
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="hint" onmouseover="showHint('hint-1')"
                 onmouseout="showHint('hint-1')">Duis rutrum <span class="text" id="hint-1">hint #1</span></span>
             ultrices tortor nec interdum.
@@ -54,7 +53,6 @@
             dui. Nam suscipit lectus ipsum, vitae vestibulum eros sollicitudin et. In ornare metus eu hendrerit
             hendrerit. Integer molestie, nisl nec tincidunt fringilla, eros odio dictum arcu.</p>
     </div>
-
     <script>
         function showHint(hintId) {
             var hint = document.getElementById(hintId);
@@ -62,5 +60,4 @@
         }
     </script>
 </body>
-
 </html>

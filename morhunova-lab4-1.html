@@ -11,45 +11,59 @@
     </style>
 </head>
 <body>
-
 <div class="container">
-    <input type="number" placeholder="Array's size" id="array-size">
+    <input type="number" placeholder="Array's size" id="array-size"> <!-- Створення контейнеру зі вхідними та вихідними данними -->
     <button id="create" type="button" onclick="start()">Create array</button>
     <p id="created-array"></p>
-    <p id="array-after-mod"></p>
+    <p id="qqq"></p>
     <p id="sorted-array"></p>
 </div>
 <script>
     function start() {
-        if (document.getElementById("array-size").value > 0 && document.getElementById("array-size").value < 50) {
-            var randomArray = [];
-            const ARRAY_LENGTH = document.getElementById("array-size").value;
-            for (let i = 0; i < ARRAY_LENGTH; i++) {
+        const size = document.getElementById("array-size").value;
+        if (size > 0 && size < 50) { /*умова на кількість елементів у масиві, їх повинно бути не більше 50 */
+            var randomArray = []; /*створюється массив, в якому рандомно буде записана к-сть елементів, вказана користувачем */
+            for (let i = 0; i < size; i++) {
                 randomArray.push(Math.floor(Math.random() * (100 - 1)) + 1);
             }
 
-            document.getElementById("created-array").innerHTML = "Created array: " + randomArray.toString();
+            document.getElementById("created-array").innerHTML = "Created array: " + randomArray.toString(); /* створений масив передається до HTML-документу по id */
 
-            for (let i = 2; i <= randomArray.length; i++) {
-                if(randomArray[i] % 2 === 0) {
-                    var max = Math.max(...randomArray);
-                    a = randomArray.indexOf(Math.max(randomArray));
-                }
+            function maxp(arr) { //шукаємо максимальний парний елемент у масиві
+                const evenArr = arr.filter(function(number) {
+                    return number % 2 === 0;
+                })
+
+                Array.max = function (array) {
+                    return Math.max.apply(Math, array);
+                };
+
+                return Array.max(evenArr);
+            }
+            const maxim = maxp(randomArray);
+
+            function minp(arr) { //шукаємо мінімальний непарний елемент у масиві
+                const evArr = arr.filter(function (number){
+                    return number % 2 - 1 === 0;
+                })
+
+                Array.min = function (array) {
+                    return Math.min.apply(Math, array);
+                };
+
+                return Array.min(evArr);
             }
 
-            for (let i = 0; i <= randomArray.length; i++) {
-                if(!randomArray[i] % 2 === 0) {
-                    var min = Math.min(...randomArray);
-                    b = randomArray.indexOf(Math.min(randomArray));
-                }
-            }
+            const minim = minp(randomArray);
 
-            randomArray.splice(a, 1, min);
-            randomArray.splice(b, 1, max);
+            const num1 = randomArray.indexOf(maxim);//індекси знайдених елементів
+            const num2 = randomArray.indexOf(minim);
 
-            document.getElementById("array-after-mod").innerHTML = "1: " + randomArray.toString();
+            [randomArray[num1], randomArray[num2]] = [randomArray[num2], randomArray[num1]] //обмін місцями цих елементів
 
-            document.getElementById("sorted-array").innerHTML = "Insertion sort (from min to max): " + insertionSort(randomArray).toString();
+            document.getElementById("qqq").innerHTML = "Created array: " + randomArray.toString();//передача до документу створеного масиву
+
+            document.getElementById("sorted-array").innerHTML = "Insertion sort (from min to max): " + insertionSort(randomArray).toString(); //передача до документу масиву, відсортованого методом вставки
         } else {
             document.getElementById("created-array").innerHTML = "Array's size must be between 1 and 50";
         }
