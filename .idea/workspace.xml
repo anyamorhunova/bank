@@ -19,14 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bed31cbc-40f9-4d9c-9068-438d6ec216f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lab4.html" afterDir="false" />
+    <list default="true" id="bed31cbc-40f9-4d9c-9068-438d6ec216f3" name="Default Changelist" comment="second">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angelina-lab4-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/angelina-lab4-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angelina-lab4-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/angelina-lab4-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/morhunova-lab4-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/morhunova-lab4-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhohan-lab4-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/zhohan-lab4-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhohan-lab4-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/zhohan-lab4-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4.html" beforeDir="false" afterPath="$PROJECT_DIR$/lab4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/morhunova-lab4-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/morhunova-lab4-2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +72,18 @@
       <workItem from="1601547630305" duration="8401000" />
       <workItem from="1601639438213" duration="5000" />
       <workItem from="1603098728154" duration="3233000" />
-      <workItem from="1603348765334" duration="9025000" />
+      <workItem from="1603348765334" duration="14121000" />
+      <workItem from="1603812765503" duration="83000" />
+      <workItem from="1603966010188" duration="4955000" />
     </task>
+    <task id="LOCAL-00001" summary="second">
+      <created>1603366906018</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603366906018</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +99,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="second" />
+    <option name="LAST_COMMIT_MESSAGE" value="second" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1601656447572">
@@ -103,6 +114,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1603352994567" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1603366911746">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1603366911746" />
     <state x="123" y="245" key="com.intellij.ide.util.TipDialog" timestamp="1601639438782">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -111,6 +126,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="375" y="33" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.834@0.0.1536.834" timestamp="1603352706086" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1603966284441">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1603966284441" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1603353008513">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

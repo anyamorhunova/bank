@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Lab4.6</title>
     <style>
         form{
-            margin: 50px;
+            margin: 5%;
         }
         input:invalid {
             border: 2px dashed red;
@@ -17,21 +17,39 @@
     </style>
 </head>
 <body>
-<form>
-    <label>Введіть дійсне число:(*)</label><br>
-    <input type="number" required><br>
-    <label>Введіть ціле число:</label><br>
-    <input id="number"><br>
-    <input type="button" value="send">
-
-    <script>
-        numb = document.getElementById("number")
-        function isInteger(num) {
-            return (num ^ 0) === num;
+<script>
+    function isNumber() {
+            return document.getElementById("corfirst").innerHTML = "Дякую, число було ціле"
+    }
+</script>
+<div class="first">
+    <form>
+    <label>Введіть ціле число:(*)</label><br>
+    <input id="first" type="number" required><br>
+    <p id="corfirst"></p>
+    <input TYPE='button' VALUE='Проверка' onClick='isNumber()'>
+    </form>
+</div>
+<div class="second">
+    <form>
+        <label>Введіть дату народження:(*)</label><br>
+        <input id="date" type="date" required><br>
+        <label>Введіть пароль:(*)</label><br>
+        <input id="pas" type="password" required><br>
+        <label>Повторіть пароль:(*)</label><br>
+        <input id="pass" type="password" required>
+        <input type="button" id="go" value="check" onclick="checkPass()"><br>
+        <p id="check"></p>
+    </form>
+</div>
+<script>
+    function checkPass() {
+        if (document.getElementById('pas').value !== document.getElementById('pass').value) {
+            return document.getElementById("check").innerHTML = "Пароль не однаковий, повторіть спробу"
         }
-        if(isInteger(numb) !== true)
-            document.getElementById("number").style.color = "red";
-    </script>
-</form>
+        else return document.getElementById("check").innerHTML = "Дякую, пароль однаковий"
+    }
+</script>
 </body>
 </html>
+
