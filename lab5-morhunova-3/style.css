@@ -1,0 +1,85 @@
+
+body {
+    margin: 10px auto;
+    width: 570px;
+    font: 75%/120% Arial, Helvetica, sans-serif;
+}
+
+.accordion2 {
+    width: 480px;
+    border-bottom: solid 1px #c4c4c4;
+}
+
+.accordion2 h3 {
+    background: #e9e7e7 url(arrow-square.gif) no-repeat right -51px;
+    padding: 7px 15px;
+    margin: 0;
+    font: bold 120%/100% Arial, Helvetica, sans-serif;
+    border: solid 1px #c4c4c4;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.accordion2 h3:hover {
+    background-color: #e3e2e2;
+}
+
+.accordion2 h3.active {
+    background-position: right 5px;
+}
+
+.accordion2 p {
+    background: #f7f7f7;
+    margin: 0;
+    padding: 10px 15px 20px;
+    border-left: solid 1px #c4c4c4;
+    border-right: solid 1px #c4c4c4;
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .accordion {
+        width: 98%;
+        margin: 1%;
+    }
+
+    .accordion h3 {
+        padding: 12px 15px;
+    }
+
+    .goog-zippy-expanded {
+        background: #e9e7e7 url(arrow-square.gif) no-repeat right 10px;
+    }
+
+    .goog-zippy-collapsed {
+        background: #e9e7e7 url(arrow-square.gif) no-repeat right -46px;
+    }
+
+}
+
+.tooltip{
+    position:absolute;
+    z-index:999;
+    left:-9999px;
+    background-color:#dedede;
+    padding:5px;
+    border:1px solid #fff;
+    width:250px;
+}
+.tooltip p{
+    margin:0;
+    color:#fff;
+    background-color:#222;
+    padding:2px 7px;
+}
+
+.second {
+    margin: 30px;
+}
+

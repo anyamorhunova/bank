@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JQuery</title>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+
+</head>
+<body>
+
+    <div class="accordion2">
+        <h3>Секция 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, ea!</p>
+        <h3>Секция 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, ea!</p>
+        <h3>Секция 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, ea!</p>
+
+    </div>
+    <div class="second">
+        <p><a href="#" title="Это обыкновенный Tooltip">Наведи на меня</a></p>
+    <div class="tooltip">
+        <p>Это обыкновенный Tooltips</p>
+    </div>
+    </div>
+
+    <script>
+        /* Локализация datepicker */
+        $.datepicker.regional['ru'] = {
+            closeText: 'Закрыть',
+            prevText: 'Предыдущий',
+            nextText: 'Следующий',
+            currentText: 'Сегодня',
+            monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+            monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+            dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+            dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+            dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+            weekHeader: 'Не',
+            dateFormat: 'dd.mm.yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ru']);
+    </script>
+    <input type="text" id="datepicker">
+
+    <script>
+        $(function(){
+            $("#datepicker").datepicker();
+        });
+    </script>
+</body>
+</html>
