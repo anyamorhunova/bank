@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery include -->
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+    <!-- UniteGallery include -->
+    <script type='text/javascript' src='package/unitegallery/js/unitegallery.min.js'></script>
+    <link rel='stylesheet' href='package/unitegallery/css/unite-gallery.css' type='text/css' />
+    <script type='text/javascript' src='package/unitegallery/themes/tilesgrid/ug-theme-tilesgrid.js'></script>
+    <script type='text/javascript' src='package/unitegallery/themes/slider/ug-theme-slider.js'></script>
+
+    <!-- Pinterest include -->
+    <script type="text/javascript" async defer data-pin-hover="false" src="pinit.js"></script>
+    <!-- Twitter include -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <!-- Facebook include -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0"
+        nonce="cLwIa4Os"></script>
+    <title>Lab 5</title>
+
+</head>
+
+<body>
+    
+    <!-- UniteGallery: tilesgrid -->
+    <div id="gallery-1" style="display:none;"></div>
+    <!-- UniteGallery: slider -->
+    <div id="gallery-2" style="display: none; margin: 10px auto;">
+        <!-- Videos in slider -->
+        <div data-type="youtube" data-videoid="v4IC7qaNr7I"></div>
+        <div data-type="youtube" data-videoid="J---aiyznGQ"></div>
+        <div data-type="youtube" data-videoid="5sNuDu4dE8Y"></div>
+        <div data-type="youtube" data-videoid="5pF7cXo1qC0"></div>
+    </div>
+    <!-- Social footer -->
+    <div id="socials" style="max-width: 100%; min-width: 150px; display: flex; justify-content: center;">
+        <div style="float: left; margin: 0 3px;"><a data-pin-do="buttonFollow"
+                href="https://www.pinterest.com/pinterest/">Pinterest</a></div>
+        <div style="float: left; margin: 0 3px;"><a href="https://twitter.com/Twitter?ref_src=twsrc%5Etfw"
+                class="twitter-follow-button" data-show-count="true">Follow @Twitter</a></div>
+        <div div style="float: left; margin: 0 3px;">
+            <div class="fb-share-button" data-href="https://facebook.com/" data-layout="button_count" data-size="small">
+                <a target="_blank"
+                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                    class="fb-xfbml-parse-ignore">Share</a></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        jQuery(document).ready(function () {
+            jQuery("#gallery-1").unitegallery({ // Init UniteGallery with specified ID
+                tile_enable_icons: false, // Disable icons
+            });
+
+            jQuery("#gallery-2").unitegallery({
+                gallery_theme: "slider", // Init UniteGallery with specified ID
+                gallery_autoplay:false, // Disable autoplay of slider
+            });
+        });
+
+    </script>
+
+
+    <!-- Function to test UniteGallery -->
+    <script>
+        // from (inclusive) - START of unique IDs of test IMG
+        // to (exclusive) - END of unique IDs of test IMG
+        // galleryId - ID of UniteGallery to test
+        function testGallery(from, to, galleryId) {
+            for (let i = from; i < to; i++) {
+                var img = document.createElement('img');
+                img.src = 'https://picsum.photos/1000?random=' + i;
+                img.alt = 'Image #' + i;
+                document.getElementById(galleryId).appendChild(img);
+
+            }
+        }
+
+        testGallery(0, 21, 'gallery-1');
+        testGallery(21, 30, 'gallery-2');
+
+    </script>
+</body>
+
+</html>
