@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6. Zhohan</title>
+    <!-- jQuery include -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- jQuery UI inclide -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div id="draggable"> 
+        <img id="image" class="ui-widget-content"
+            src="https://i.pinimg.com/564x/ce/34/bf/ce34bf5e1b7d0f0db64b6f1bde844103.jpg">
+    </div>
+</body>
+
+
+<script>
+    $(function () {
+        $("#draggable").draggable();
+        $("#image").resizable();
+    });
+</script>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tasks, #add-task {
+            text-align: center;
+            margin: 40px auto 10px auto;
+            width: 40%;
+        }
+
+        table {
+            margin: 10px auto 0 auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</head>
+<body>
+    <table id='tasks' class='table table-sm table-hover'></table>
+    <div id="add-task">
+        <input id="task-title" class="form-control" type="text"  name="task-title" placeholder="Title">
+        <input id="task-text" class="form-control" type="text"  name="task-text" placeholder="Text">
+        <div class="input-group mb-3">
+            <input id="task-datetime" class="form-control" type="datetime-local"  name="task-datetime" placeholder="DateTime">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" onclick="readXML(addTask);">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var alerts = [];
+
+        function readXML(func) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    func(this.responseXML);
+                } 
+            };
+            xmlhttp.open("GET", "lab9.xml", true);
+            xmlhttp.send();
+        }
+
+        function showTasks(xmlDoc) {
+            var i;
+            var table = "<thead><tr><th scope='col'>Title</th><th scope='col'>Text</th><th scope='col'>Date</th></tr></thead>";
+            deleteAllAlerts();
+            table += "<tbody>";
+            var x = xmlDoc.getElementsByTagName("TASK");
+            for (i = 0; i < x.length; i++) {
+                var title = x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+                var text = x[i].getElementsByTagName("TEXT")[0].childNodes[0].nodeValue;
+                var date = x[i].getElementsByTagName("DATE")[0].childNodes[0].nodeValue;
+                table += "<tr><td>" + title + "</td>" +
+                    "<td>" + text + "</td>" +
+                    "<td>" + date + "</td></tr>";
+                    setAlert(date, title);
+            }
+            table += "</tbody>";
+            document.getElementById("tasks").innerHTML = table;
+            console.log("tasks showed");
+        }
+
+        function addTask(xmlDoc) {
+            var newTask = xmlDoc.createElement("TASK");
+            var newTitle = xmlDoc.createElement("TITLE")
+            newTitle.appendChild(xmlDoc.createTextNode(document.getElementById("task-title").value));
+            var newText = xmlDoc.createElement("TEXT");
+            newText.appendChild(xmlDoc.createTextNode(document.getElementById("task-text").value));
+            var newDate = xmlDoc.createElement("DATE");
+            newDate.appendChild(xmlDoc.createTextNode(document.getElementById("task-datetime").value));
+            newTask.appendChild(newTitle);
+            newTask.appendChild(newText);
+            newTask.appendChild(newDate);
+            xmlDoc.getElementsByTagName("TASKS")[0].appendChild(newTask);
+            console.log(xmlDoc);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "writeXML.php", true);
+            xhr.setRequestHeader("Content-Type", "text/xml");
+            xhr.send(xmlDoc);
+            showTasks(xmlDoc);
+            console.log("send");
+        }
+
+
+        function setAlert(time, msg) {
+            var mseconds = new Date(time).getTime() - new Date().getTime();
+            if (mseconds > 0) {
+                alerts.push(setTimeout(function() {
+                    alert(msg);
+                }, mseconds));
+                console.log(time + ": " + msg);
+            }
+        }
+        
+        function deleteAllAlerts() {
+            for (var i = 0; i < alerts.length; i++) {
+                clearTimeout(alerts[i]);
+            }
+            alerts.length = 0;
+            console.log("all alerts deleted");
+        }
+
+        readXML(showTasks);
+    </script>
+</body>
+</html>
